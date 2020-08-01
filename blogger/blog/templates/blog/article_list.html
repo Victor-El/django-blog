@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+
+{% block blog-content %}
+    <h2>Article Lists</h2>
+
+    {% for article in object_list %}
+        <div class="article">
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.date_created }}</p>
+            <br>
+        </div>
+    {% endfor %}
+{% endblock blog-content %}
