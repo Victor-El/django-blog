@@ -68,3 +68,12 @@ footer {
     color: white;
     font-weight: bold;
 }
+
+.pagination-link {
+    text-decoration: none;
+    color: cadetblue;
+}
+
+.active-link {
+    color: maroon;
+}
