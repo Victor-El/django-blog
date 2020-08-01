@@ -22,3 +22,9 @@ class ArticleDetail(DetailView):
 
 class CreateArticle(CreateView):
     model = Article
+    fields = ['author', 'title', 'content']
+
+
+class UpdateArticle(UpdateView):
+    model = Article
+    fields = ['author', 'title', 'content']
