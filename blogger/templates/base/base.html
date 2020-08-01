@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ app_name }}</title>
+    <title>{% if app_name == None %} Blogger {% else %} {{ app_name }} {% endif %}</title>
     <link rel="stylesheet" href="{% static 'css/index-style.css' %}">
     <script src="{% static 'js/highlight-link.js' %}"></script>
 </head>
@@ -14,6 +14,6 @@
     {% block blog-content %}
     {% endblock blog-content %}
 
-    <footer>2020 &copy; {{ app_name }} by CodeEnzyme</footer>
+    <footer>2020 &copy; {% if app_name == None %} Blogger {% else %} {{ app_name }} {% endif %} by CodeEnzyme</footer>
 </body>
 </html>

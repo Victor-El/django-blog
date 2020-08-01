@@ -1,5 +1,5 @@
 <header>
-    <h1>{{ app_name }}</h1>
+    <h1>{% if app_name == None %} Blogger {% else %} {{ app_name }} {% endif %}</h1>
     <nav>
         <ul>
             <li><a id="index" href="/">Home</a></li>
