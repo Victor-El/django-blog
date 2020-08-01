@@ -7,7 +7,18 @@
         <div class="article">
             <h3>{{ article.title }}</h3>
             <p>{{ article.date_created }}</p>
+            <a href="{{ article.get_absolute_url }}">More Details</a>
             <br>
         </div>
     {% endfor %}
+
+    <a class="pagination-link" href="?page=1">&laquo; first</a>
+    {% for p in page_obj.paginator.page_range %}
+    {% if page_obj.number == p %}
+        <a class="pagination-link active-link" href="?page={{ p }}">{{ p }}</a>
+    {% else %}
+        <a class="pagination-link" href="?page={{ p }}">{{ p }}</a>
+    {% endif %}
+    {% endfor %}
+    <a class="pagination-link" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
 {% endblock blog-content %}
