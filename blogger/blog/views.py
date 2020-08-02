@@ -25,7 +25,11 @@ class ArticleDetail(DetailView):
 class AddArticle(FormView):
     form_class = AddArticleForm
     success_url = "/"
-    template_name = "article_add"
+    template_name = 'blog/article_add.html'
+
+    def form_valid(self, form):
+        form.persist()
+        return super().form_valid(form)
 
 
 class CreateArticle(CreateView):

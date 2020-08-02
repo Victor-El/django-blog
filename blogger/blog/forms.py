@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Author
+from .models import Author, Article
 
 
 class AddArticleForm(forms.Form):
@@ -11,3 +11,18 @@ class AddArticleForm(forms.Form):
         "row": "10",
         "placeholder": "Write article content here"
     }))
+
+
+    def persist(self):
+        data = self.cleaned_data
+        print(data)
+        print(data)
+        Article.objects.create(author=data['author'], title=data['title'], content=data['content'])
+        return True
+
+
+    def clean(self):
+        if len(self.cleaned_data.get("content")) < 20:
+            raise forms.ValidationError("Content too short")
+        else:
+            return self.cleaned_data
