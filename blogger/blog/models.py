@@ -18,5 +18,5 @@ class Article(models.Model):
     date_created = models.DateField(auto_now_add=True)
 
     def get_absolute_url(self):
-        return reverse("article_detail", kwargs={"pk": self.pk})
+        return reverse("blog:article_detail", kwargs={"pk": self.pk})
     
