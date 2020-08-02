@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView, FormView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Article
 from .forms import AddArticleForm
@@ -22,7 +23,8 @@ class ArticleDetail(DetailView):
         return context
 
 
-class AddArticle(FormView):
+class AddArticle(LoginRequiredMixin, FormView):
+    login_url = '/signin'
     form_class = AddArticleForm
     success_url = "/"
     template_name = 'blog/article_add.html'
@@ -32,17 +34,20 @@ class AddArticle(FormView):
         return super().form_valid(form)
 
 
-class CreateArticle(CreateView):
+class CreateArticle(LoginRequiredMixin, CreateView):
+    login_url = '/signin'
     model = Article
     fields = ['author', 'title', 'content']
 
 
-class UpdateArticle(UpdateView):
+class UpdateArticle(LoginRequiredMixin, UpdateView):
+    login_url = '/signin'
     model = Article
     fields = ['author', 'title', 'content']
     template_name_suffix = "_update"
 
 
-class DeleteArticle(DeleteView):
+class DeleteArticle(LoginRequiredMixin, DeleteView):
+    login_url = '/signin'
     model = Article
     success_url = reverse_lazy("blog:index")
