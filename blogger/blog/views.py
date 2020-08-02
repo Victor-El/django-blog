@@ -28,3 +28,4 @@ class CreateArticle(CreateView):
 class UpdateArticle(UpdateView):
     model = Article
     fields = ['author', 'title', 'content']
+    template_name_suffix = "_update"

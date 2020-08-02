@@ -2,6 +2,9 @@
 
 {% block blog-content %}
     <h2>Article Lists</h2>
+    <a href="create">Write new Article</a>
+    <br>
+    <br>
 
     {% for article in object_list %}
         <div class="article">
@@ -11,6 +14,9 @@
             <br>
         </div>
     {% endfor %}
+
+    <br>
+    <br>
 
     <a class="pagination-link" href="?page=1">&laquo; first</a>
     {% for p in page_obj.paginator.page_range %}
