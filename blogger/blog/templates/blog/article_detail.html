@@ -6,5 +6,7 @@
     <p>{{ object.content }}</p>
     <p>Date: {{ object.date_created | date }}</p>
     <br>
+    <a href="{{ object.get_update_url }}">Update</a>
+    <br>
     <small>{{ coder }}</small>
 {% endblock blog-content %}

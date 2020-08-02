@@ -19,4 +19,8 @@ class Article(models.Model):
 
     def get_absolute_url(self):
         return reverse("blog:article_detail", kwargs={"pk": self.pk})
+
+    
+    def get_update_url(self):
+        return reverse("blog:article_update", kwargs={"pk": self.pk})
     
