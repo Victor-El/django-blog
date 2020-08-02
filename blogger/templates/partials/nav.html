@@ -8,4 +8,15 @@
             <li><a id="contact" href="/contact">Contact</a></li>
         </ul>
     </nav>
+    
+    {% if request.user.is_authenticated %}
+        <div id="signed-in">
+            <h4>{{ request.user.username }}</h4>
+            <a href="#">Logout</a>
+        </div>
+    {% else %}
+        <div id="signed-in">
+            <a href="/signin">Login</a>
+        </div>
+    {% endif %}
 </header>

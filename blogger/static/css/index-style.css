@@ -77,3 +77,37 @@ footer {
 .active-link {
     color: maroon;
 }
+
+#signed-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#signed-in > h4 {
+    color: bisque;
+    margin-right: 80px;
+}
+
+#signed-in > a {
+    color: maroon;
+    text-decoration: none;
+    font-size: 0.8em;
+    padding: 6px;
+    margin: 5px;
+    box-shadow: 1px 1px 1px 1px #00000055;
+    border-radius: 3px;
+    background-color: burlywood;
+    position: absolute;
+    right: 11px;
+}
+
+#signed-in > a:hover {
+    box-shadow: 1px 1px 1px 1px #00000099;
+    background-color: navajowhite;
+}
+
+#signed-in > a:active {
+    font-size: 0.7em;
+    box-shadow: 1px 1px 5px 1.2px #000000DD;
+}

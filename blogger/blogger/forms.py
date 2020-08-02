@@ -1,10 +1,18 @@
 from django import forms
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
 
 
 class SignInForm(forms.Form):
     email = forms.EmailField()
     password = forms.CharField(widget=forms.PasswordInput)
+
+    def clean(self):
+        data = self.cleaned_data
+        user = authenticate(username=data['email'], password=data['password'])
+        if user == None:
+            raise forms.ValidationError('Incorrect email or password')
+        return data
 
 
 class SignUpForm(forms.Form):

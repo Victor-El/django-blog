@@ -22,9 +22,21 @@ def about_page(request, *args, **kwargs):
 
 
 def sign_in_page(request, *args, **kwargs):
+    if request.user.is_authenticated:
+        return redirect('/')
     form = SignInForm(request.POST or None)
     if form.is_valid():
-        print(request.POST)
+        username = request.POST['email']
+        password = request.POST['password']
+        user = None
+        if (username and password):
+            user = authenticate(username=username, password=password)
+            if not (user == None):
+                login(request, user)
+                return redirect("/blog/")
+            else:
+                return redirect("/signup")
+
     context['form'] = form
     return render(request, "signin.html", context)
 
@@ -34,7 +46,7 @@ def sign_up_page(request, *args, **kwargs):
     if form.is_valid():
         email = request.POST['email']
         password = request.POST['password']
-        user = User.objects.create(email=email, password=password, username=email)
+        user = User.objects.create_user(email=email, password=password, username=email)
         print(user)
         return redirect("/signin")
 
