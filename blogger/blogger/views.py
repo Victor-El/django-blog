@@ -52,3 +52,8 @@ def sign_up_page(request, *args, **kwargs):
 
     context['form'] = form
     return render(request, "signup.html", context)
+
+
+def logout_route(request, *args, **kwargs):
+    logout(request)
+    return redirect('/')
