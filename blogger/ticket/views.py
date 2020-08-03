@@ -11,7 +11,7 @@ def submit_ticket(request, *args, **kwargs):
         message = request.POST['message']
 
         Ticket.objects.create(name=name, title=title, message=message)
-        return redirect('/ticket_success')
+        return redirect('/ticket/')
 
 
 def ticket_success(request, *args, **kwargs):

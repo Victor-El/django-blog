@@ -1,5 +1,15 @@
 {% extends 'base/base.html' %}
+{% load static %}
 
 {% block blog-content %}
-    <h2>Contact Page</h2>
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <div id="contact-sect">
+        <h2>Contact Page</h2>
+        <form action="/ticket/submit" method="POST"> {% csrf_token %}
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="text" name="title" placeholder="Title" required>
+            <textarea name="message" cols="30" rows="10" placeholder="Message" required></textarea>
+            <input type="submit" value="Send">
+        </form>
+    </div>
 {% endblock blog-content %}

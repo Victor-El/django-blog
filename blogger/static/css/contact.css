@@ -1,0 +1,11 @@
+#contact-sect {
+    background-color: navajowhite;
+    width: 100vw;
+}
+
+#contact-sect > h2 {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    color: maroon;
+}
