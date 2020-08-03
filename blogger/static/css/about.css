@@ -1,0 +1,17 @@
+.info-sect {
+    background-color: navajowhite;
+}
+
+h2 {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+    padding-top: 20px;
+    color: maroon;
+}
+
+p {
+    text-align: justify;
+    padding: 20px;
+    color: maroon;
+}
