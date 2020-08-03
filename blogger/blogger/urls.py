@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_page),
     path('blog/', include("blog.urls")),
+    path('ticket/', include('ticket.urls')),
     path('contact', contact_page),
     path('about', about_page),
     path('signin', sign_in_page),
