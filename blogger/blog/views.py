@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView, FormView
 from django.urls import reverse_lazy
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 from .models import Article
 from .forms import AddArticleForm
@@ -34,10 +34,13 @@ class AddArticle(LoginRequiredMixin, FormView):
         return super().form_valid(form)
 
 
-class CreateArticle(LoginRequiredMixin, CreateView):
+class CreateArticle(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     login_url = '/signin'
     model = Article
     fields = ['author', 'title', 'content']
+
+    def test_func(self):
+        return self.request.user.is_superuser
 
 
 class UpdateArticle(LoginRequiredMixin, UpdateView):
