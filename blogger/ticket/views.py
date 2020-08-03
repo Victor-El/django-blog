@@ -1,4 +1,4 @@
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 
 from .models import Ticket
 
@@ -13,3 +13,6 @@ def submit_ticket(request, *args, **kwargs):
         Ticket.objects.create(name=name, title=title, message=message)
         return redirect('/ticket_success')
 
+
+def ticket_success(request, *args, **kwargs):
+    return render(request, 'ticket_success.html', {})
