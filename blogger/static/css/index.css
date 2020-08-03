@@ -72,3 +72,20 @@
     background-color: rgba(128, 0, 0, 0.877);
     position: relative;
 }
+
+@media screen and (max-width: 470px) {
+    #organize-img {
+        min-width: 250px !important;
+        min-height: 200px !important;
+    }
+
+    #org-txt-blog-info {
+        font-size: 0.9em;
+        font-weight: 300;
+    }
+    
+    #plan-img {
+        min-width: 130px;
+        min-height: 170px;
+    }
+}

@@ -12,8 +12,10 @@ header {
     display: flex;
     align-items: center;
     width: 100vw;
+    max-width: 100vw;
     background-color: maroon;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 header > h1 {
