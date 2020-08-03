@@ -30,7 +30,7 @@ class AddArticle(LoginRequiredMixin, FormView):
     template_name = 'blog/article_add.html'
 
     def form_valid(self, form):
-        form.persist()
+        form.persist(self.request.user)
         return super().form_valid(form)
 
 

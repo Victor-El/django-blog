@@ -4,7 +4,6 @@ from .models import Author, Article
 
 
 class AddArticleForm(forms.Form):
-    author = forms.ModelChoiceField(queryset=Author.objects.all())
     title = forms.CharField(max_length=120)
     content = forms.CharField(widget=forms.Textarea(attrs={
         "col": "20",
@@ -13,11 +12,12 @@ class AddArticleForm(forms.Form):
     }))
 
 
-    def persist(self):
+    def persist(self, user):
         data = self.cleaned_data
+        user = user
         print(data)
         print(data)
-        Article.objects.create(author=data['author'], title=data['title'], content=data['content'])
+        Article.objects.create(author=user, title=data['title'], content=data['content'])
         return True
 
 
