@@ -1,6 +1,8 @@
 #contact-sect {
     background-color: navajowhite;
     width: 100vw;
+    height: 100vh;
+    padding: 30px;
 }
 
 #contact-sect > h2 {
@@ -8,4 +10,33 @@
     text-align: center;
     margin: 0 auto;
     color: maroon;
+    padding: 10px;
+}
+
+form {
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+form > * {
+    display: block;
+    margin: 20px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+form > input {
+    height: 40px;
+}
+
+form > input[type="submit"] {
+    background-color: maroon;
+    color: navajowhite;
 }
