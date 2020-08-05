@@ -1,8 +1,13 @@
 {% extends 'base/base.html' %}
+{% load static %}
 
 {% block blog-content %}
-    <form method="POST"> {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Update">
-    </form>
+    <link rel="stylesheet" href="{% static 'css/article_update.css' %}">
+    <div id="article-update-div">
+        <h2>Update Article</h2>
+        <form method="POST"> {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Update">
+        </form>
+    </div>
 {% endblock blog-content %}
