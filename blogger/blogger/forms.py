@@ -4,8 +4,12 @@ from django.contrib.auth import authenticate
 
 
 class SignInForm(forms.Form):
-    email = forms.EmailField()
-    password = forms.CharField(widget=forms.PasswordInput)
+    email = forms.EmailField(label="", widget=forms.TextInput(attrs={
+        "placeholder": "email"
+    }))
+    password = forms.CharField(label="", widget=forms.PasswordInput(attrs={
+        "placeholder": "password"
+    }))
 
     def clean(self):
         data = self.cleaned_data
@@ -16,8 +20,12 @@ class SignInForm(forms.Form):
 
 
 class SignUpForm(forms.Form):
-    email = forms.EmailField()
-    password = forms.CharField(widget=forms.PasswordInput)
+    email = forms.EmailField(label="", widget=forms.TextInput(attrs={
+        "placeholder": "email"
+    }))
+    password = forms.CharField(label="", widget=forms.PasswordInput(attrs={
+        "placeholder": "password"
+    }))
 
 
     def clean_email(self):
