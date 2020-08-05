@@ -73,7 +73,10 @@ footer {
 
 .pagination-link {
     text-decoration: none;
-    color: cadetblue;
+}
+
+a {
+    color: chocolate;
 }
 
 .active-link {

@@ -1,0 +1,21 @@
+#articles {
+    background-color: navajowhite;
+    padding: 20px;
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+}
+
+#articles > h2 {
+    color: maroon;
+}
+
+#articles > a[href="add"] {
+    position: absolute;
+    top: 50px;
+    right: 150px;
+}
+
+.article {
+    margin: 0px 0px 40px 0px;
+}
