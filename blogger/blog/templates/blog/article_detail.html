@@ -1,14 +1,18 @@
 {% extends 'base/base.html' %}
+{% load static %}
 
 {% block blog-content %}
-    <h2>{{ object.title }}</h2>
-    <p>Written by: {{ object.author.username }}</p>
-    <p>{{ object.content }}</p>
-    <p>Date: {{ object.date_created | date }}</p>
-    <br>
-    <a href="{{ object.get_update_url }}">Update</a>
-    <br>
-    <a href="{{ object.get_delete_url }}">Delete</a>
-    <br>
-    <small>{{ coder }}</small>
+    <link rel="stylesheet" href="{% static 'css/article_detail.css' %}">
+    <div id="article-detail-div">
+        <h2>{{ object.title }}</h2>
+        <p>Written by: {{ object.author.username }}</p>
+        <p>{{ object.content }}</p>
+        <p>Date: {{ object.date_created | date }}</p>
+        <br>
+        <a href="{{ object.get_update_url }}">Update</a>
+        <br>
+        <a href="{{ object.get_delete_url }}">Delete</a>
+        <br>
+        <small>{{ coder }}</small>
+    </div>
 {% endblock blog-content %}
