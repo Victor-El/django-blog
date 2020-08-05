@@ -1,0 +1,51 @@
+#signup-div {
+    width: 100vw;
+    padding: 15px;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: navajowhite;
+}
+
+form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    background-color: moccasin;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px 1px #00000088;
+    border-radius: 15px;
+}
+
+form input {
+    width: 80%;
+    height: 40px;
+    padding: 5px;
+    margin-top: 40px;
+    border-radius: 5px;
+}
+
+form > input[type="submit"] {
+    background-color: maroon;
+    color: navajowhite;
+    font-size: 1.2em;
+    padding: 15px;
+    height: 50px;
+    box-sizing: border-box;
+}
+
+p {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: maroon;
+}
