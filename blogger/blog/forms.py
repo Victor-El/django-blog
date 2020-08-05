@@ -4,8 +4,10 @@ from .models import Author, Article
 
 
 class AddArticleForm(forms.Form):
-    title = forms.CharField(max_length=120)
-    content = forms.CharField(widget=forms.Textarea(attrs={
+    title = forms.CharField(label="", widget=forms.TextInput(attrs={
+        "placeholder": "title"
+    }))
+    content = forms.CharField(label="", widget=forms.Textarea(attrs={
         "col": "20",
         "row": "10",
         "placeholder": "Write article content here"

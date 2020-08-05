@@ -1,8 +1,13 @@
 {% extends 'base/base.html' %}
+{% load static %}
 
 {% block blog-content %}
-    <form method="POST"> {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Add">
-    </form>
+    <link rel="stylesheet" href="{% static 'css/article_add.css' %}">
+    <div id="add-article-div">
+        <h2>Write an article</h2>
+        <form method="POST"> {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Add">
+        </form>
+    </div>
 {% endblock blog-content %}
