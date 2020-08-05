@@ -1,0 +1,14 @@
+#article-confirm-delete {
+    padding: 30px;
+    color: maroon;
+    background-color: navajowhite;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+#article-confirm-delete input[type="submit"] {
+    color: navajowhite;
+    background-color: maroon;
+    padding: 5px;
+    border-radius: 5px;
+}

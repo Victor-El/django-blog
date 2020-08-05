@@ -1,8 +1,12 @@
 {% extends 'base/base.html' %}
+{% load static %}
 
 {% block blog-content %}
-    <form method="POST"> {% csrf_token %}
-        <p>Do you want to delete {{ object.title }}?</p>
-        <input type="submit" value="Yes">
-    </form>
+    <link rel="stylesheet" href="{% static 'css/article_confirm_delete.css' %}">
+    <div id="article-confirm-delete">
+        <form method="POST"> {% csrf_token %}
+            <p>Do you want to delete " {{ object.title }} " ?</p>
+            <input type="submit" value="Yes">
+        </form>
+    </div>
 {% endblock blog-content %}
