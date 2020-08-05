@@ -46,7 +46,7 @@ class CreateArticle(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 class UpdateArticle(LoginRequiredMixin, UpdateView):
     login_url = '/signin'
     model = Article
-    fields = ['author', 'title', 'content']
+    fields = ['title', 'content']
     template_name_suffix = "_update"
 
 
