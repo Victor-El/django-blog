@@ -7,6 +7,10 @@ verify_ssl = true
 
 [packages]
 django = "*"
+psycopg2 = "==2.7.5"
+django-heroku = "*"
+gunicorn = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.6"
