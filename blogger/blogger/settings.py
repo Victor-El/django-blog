@@ -25,7 +25,7 @@ SECRET_KEY = '*&k5x-ya=z%(u0c=pul607p1e92r$n+h1dc$u-odpho(om8_qe'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://dj-blogger.herokuapp.com/']
 
 
 # Application definition
